@@ -56,11 +56,11 @@ function generatePassword (){
       }
 
     function gen(array) {
-      for (let i = 0; i < long; i++){
-        pass+=array[Math.floor(Math.random()*long)]
+      for (var i = 0; i < long; i++){
+        pass+=array[Math.floor(Math.random()*array.length)]
       }
 
-      console.log(pass)
+      console.log("Your secure password is " + pass);
 
     }
 
@@ -68,12 +68,6 @@ function generatePassword (){
 
 };
 
-
-  // start a fresh variable as an empty string
-  // loop "long" times
-  // pick a random number between 0 and the length of temp array (HINT var pass above)
-  // with this random number, grab a random value out of the temp array (think array[randomNumber])
-  // append this random value from temp array to a new string
 
 
 //check for the options
@@ -85,9 +79,9 @@ function generatePassword (){
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  // var passwordText = document.querySelector("#password");
+  document.querySelector("#password").innerHTML=pass;
+  // passwordText.innerHTML = password;
 
 }
 
